@@ -1,0 +1,6 @@
+[client]
+database = janus_dev
+host = localhost
+user = janus
+password = janus
+default-character-set = utf8
