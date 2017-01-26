@@ -26,7 +26,11 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "users"
+    "users",
+    "identifiers",
+    "doors",
+    "permissions",
+    "access",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -100,6 +104,7 @@ REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": (
         "rest_framework.renderers.BrowsableAPIRenderer",
         "rest_framework.renderers.JSONRenderer",
+        "backend.renderers.PlainTextRenderer",
     ),
     "DEFAULT_PARSER_CLASSES": (
         "rest_framework.parsers.JSONParser",

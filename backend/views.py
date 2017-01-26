@@ -1,4 +1,5 @@
 import json
+import django.utils.text
 
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
