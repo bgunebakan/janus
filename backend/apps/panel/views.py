@@ -16,3 +16,9 @@ def can_access(request):
 
 def deneme(request):
         return HttpResponse("True")
+
+#def health(request):
+    
+
+
+

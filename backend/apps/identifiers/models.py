@@ -24,7 +24,9 @@ class Identifier(models.Model):
     user = models.ForeignKey('users.EmailUser')
     created_date = models.DateTimeField(default=timezone.now)
     updated_date = models.DateTimeField(auto_now=True)
-
+   
+    def __unicode__(self):
+        return self.key
 
 class Identifier_types(models.Model):
     name = models.CharField(

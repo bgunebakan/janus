@@ -27,3 +27,7 @@ INSTALLED_APPS += (
 STATICFILES_DIRS.append(
     os.path.join(BASE_DIR, os.pardir, 'frontend', 'build'),
 )
+
+CRONJOBS = [
+    ('*/5 * * * *', 'backend.crons.update_controller_health')
+]

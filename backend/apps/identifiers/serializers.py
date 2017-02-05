@@ -10,12 +10,18 @@ class IdentifierTypeSerializer(serializers.ModelSerializer):
         ) 
 
 class IdentifierSerializer(serializers.ModelSerializer):
+    identifier_type = IdentifierTypeSerializer()
+    user = UserSerializer()
     class Meta:
         model = Identifier
-        identifier_type = IdentifierTypeSerializer()
-        user = UserSerializer()
         fields = (
             'id', 'name', 'key', 'user', 'is_active',
             'identifier_type', 'created_date', 'updated_date'
         ) 
  
+class PermIdentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Identifier
+        fields = (
+            'key','is_active' 
+        )

@@ -12,8 +12,9 @@ class Door(models.Model):
         'unique': 'That identifier name is already saved.'
         }
     )
-    health = models.BooleanField(default=True)
-    identifier_type = models.ForeignKey('identifiers.Identifier_types')
+
+    antipassback = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=timezone.now)
     updated_date = models.DateTimeField(auto_now=True)
-
+    def __unicode__(self):
+        return self.name

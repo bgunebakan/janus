@@ -70,6 +70,8 @@ class EmailUser(AbstractBaseUser, PermissionsMixin):
     last_updated = models.DateTimeField(auto_now=True)
     objects = EmailUserManager()
 
+    document = models.FileField(upload_to='doc/',default='doc/none/no-doc.pdf')
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
 
