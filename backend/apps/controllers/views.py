@@ -10,6 +10,7 @@ from permissions.models import Permission
 
 from .serializers import ControllerSerializer
 from permissions.serializers import IdentSerializer
+import jason
 
 class ControllerViewSet(viewsets.ModelViewSet):
     serializer_class = ControllerSerializer
@@ -71,8 +72,9 @@ class ControllerViewSet(viewsets.ModelViewSet):
  
         if controller.ip_address == client_ip:
             
-            identifier_key = request.POST.get('identifier_key', '')
-           
+            #identifier_key = request.POST.get('identifier_key', '')
+            post_data = json.loads(request.body)
+	    identifier_key = post_data['identifier_key']
             if identifier_key != None:
 
                 ident = Identifier.objects.filter(key=identifier_key)
