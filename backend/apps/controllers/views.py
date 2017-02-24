@@ -10,7 +10,7 @@ from permissions.models import Permission
 
 from .serializers import ControllerSerializer
 from permissions.serializers import IdentSerializer
-import jason
+import json
 
 class ControllerViewSet(viewsets.ModelViewSet):
     serializer_class = ControllerSerializer
